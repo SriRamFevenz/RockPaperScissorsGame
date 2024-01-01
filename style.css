@@ -1,0 +1,342 @@
+:root {
+    --red: #E74032;
+    --blue: #307DEE;
+    --green: #269746;
+    --yellow: #FBC31E;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--blue);
+    color: #F8F9FA;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.container {
+    width: 600px;
+    height: 440px;
+    background-color: #333;
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+}
+
+.container.active {
+    background-color: #fff;
+    color: #333;
+}
+
+h2 {
+    margin: .5rem 0;
+}
+
+h2 .player-choice {
+    color: var(--red);
+    margin-left: 140px;
+}
+
+h2 .computer-choice {
+    color: #269746;
+    margin-left: 97px;
+}
+
+h2 .result {
+    color: #FBC31E;
+    margin-left: 221px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.btn {
+    font-size: 17px;
+    padding: 1rem 2em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+}
+
+
+#rock {
+    background-color: transparent;
+    border: 1px solid var(--red);
+    color: #fff;
+}
+
+#paper {
+    background-color: transparent;
+    border: 1px solid var(--green);
+    color: #fff;
+}
+
+#scissor {
+    background-color: transparent;
+    border: 1px solid var(--yellow);
+    color: #fff;
+}
+
+#rock:hover {
+    filter: brightness(1.1);
+    background-color: var(--red);
+
+}
+
+#paper:hover {
+    filter: brightness(1.1);
+    background-color: var(--green);
+
+}
+
+.btns.active {
+    color: #333;
+}
+
+.btns.active #rock ,
+.btns.active #paper ,
+.btns.active #scissor,
+.reset-btn.active{
+    color: #333;
+}
+
+#scissor:hover {
+    filter: brightness(1.1);
+    background-color: var(--yellow);
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+.status .win {
+    color: var(--green);
+}
+
+.status .lose {
+    color: var(--red);
+}
+
+.status .tie {
+    color: var(--yellow);
+}
+
+.reset {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+}
+
+.reset-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--blue);
+    color: #fff;
+}
+
+.reset-btn:hover {
+    filter: brightness(1.1);
+    background-color: var(--blue);
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    height: 30px;
+    padding: 10px 20px;
+}
+
+.copy {
+    margin-right: 2rem;
+}
+
+.links {
+    margin-left: 2rem;
+}
+
+.links a {
+    font-size: 17px;
+    color: #fff;
+    margin: 0 10px;
+
+}
+
+.links a i {
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+    font-weight: 600;
+}
+
+.links a:hover i {
+    color: #D9643A;
+}
+
+.about a {
+    text-decoration: underline;
+    color: var(--blue);
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+}
+
+.about a:hover {
+    text-decoration: none;
+    filter: brightness(1.1);
+    color: var(--blue);
+}
+
+/* Switch */
+.switch {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+}
+
+.switch-btn {
+    width: 70px;
+    height: 35px;
+    background-color: #333;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+    box-shadow: rgba(0,0,0,.24) 0 3px 8px;
+}
+
+.switch-btn::before {
+    position: absolute;
+    margin: 3px;
+    content: '';
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    background-color: #fff;
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+}
+
+#checkInput {
+    visibility: hidden;
+}
+
+#checkInput:checked+.switch-btn {
+    background-color: #fff;
+}
+
+#checkInput:checked+.switch-btn::before {
+    background-color: #333;
+    transform: translateX(32px);
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+        height: 350px;
+        padding: 1rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        margin: .5rem 0;
+        font-size: 20px;
+    }
+
+    h2 .player-choice {
+        float: right;
+        margin-left: 0px;
+    }
+
+    h2 .computer-choice {
+        float: right;
+        margin-left: 0px;
+    }
+
+    h2 .result {
+        float: right;
+        margin-left: 0px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: .6rem 1.6em;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    .copy {
+        margin-right: .5rem;
+    }
+
+    .links {
+        margin-left: .5rem;
+    }
+
+    .links a {
+        font-size: 16px;
+        margin: 0 6px;
+
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    footer {
+        flex-direction: column;
+        height: 100px;
+    }
+
+    footer .links,
+    footer .about,
+    footer .copy {
+        display: block
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .container {
+        padding: .7rem;
+    }
+
+    h2 {
+        margin: .5rem 0;
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: .6rem 1.6em;
+    }
+}

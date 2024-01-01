@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game by Sriram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="switch">
+        <input type="checkbox" id="checkInput" >
+        <label class="switch-btn" for="checkInput"></label>
+    </div>
+    <div class="container">
+        <h2>
+            Player choice : <span class="player-choice"> </span>
+        </h2>
+        <h2>Computer choice : <span class="computer-choice"> </span>
+        </h2>
+        <h2>
+            Result : <span class="result"></span>
+        </h2>
+        <div class="btns">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissor">Scissor</button>
+        </div>
+        <div class="status">
+            <h2>Win : <span class="win">0</span></h2>
+            <h2>Lose : <span class="lose">0</span></h2>
+            <h2>Tie : <span class="tie">0</span></h2>
+        </div>
+        <div class="reset">
+            <button class="btn reset-btn">Reset Game</button>
+        </div>
+    </div>
+    <footer>
+        <div class="links">
+            <a href="https://github.com/SriRamFevenz/"><i class="fa-brands fa-github"></i></a>
+            <a href="https://"><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="about">
+            <h4>About me : <a href="https://github.com/SriRamFevenz/">click here</a></h4>
+        </div>
+        <div class="copy">
+            <h4>Copyright &copy; 2023</h4>
+        </div>
+    </footer>
+    <!-- <h1>&#9994;</h1> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!-- 
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #111;
+    color: #F8F9FA;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container {
+    width: 600px;
+    height: 440px;
+    background-color: #333;
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    position: relative;
+    top: 3rem;
+}
+
+h2 {
+    margin: .5rem 0;
+}
+
+h2 .player-choice {
+    color: #307DEE;
+    margin-left: 140px;
+}
+
+h2 .computer-choice {
+    color: #269746;
+    margin-left: 97px;
+}
+
+h2 .result {
+    color: #FBC31E;
+    margin-left: 221px;
+}
+
+h1 {
+    position: absolute;
+    top: 2rem;
+    text-align: center;
+}
+
+h1 span {
+    color: #307DEE;
+    font-variant: small-caps;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.btn {
+    font-size: 17px;
+    padding: 1rem 2em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+}
+
+
+#rock {
+    background-color: #E74032;
+    color: #fff;
+}
+
+#paper {
+    background-color: #269746;
+    color: #fff;
+}
+
+#scissor {
+    background-color: #FBC31E;
+    color: #fff;
+}
+
+#rock:hover,
+#paper:hover,
+#scissor:hover {
+    filter: brightness(1.1);
+}
+
+.rock {
+    color: #E74032;
+}
+
+.paper {
+    color: #269746;
+}
+
+.scissor {
+    color: #FBC31E;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+.status .win {
+    color: #269746;
+}
+
+.status .lose {
+    color: #E74032;
+}
+
+.status .tie {
+    color: #FBC31E;
+}
+
+.reset {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+}
+
+.reset-btn {
+    width: 100%;
+    background-color: #307DEE;
+    color: #fff;
+}
+
+.reset-btn:hover {
+    filter: brightness(1.1);
+}
+
+footer{
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    height: 30px;
+    padding: 10px 20px;
+}
+.copy{
+    margin-right: 2rem;
+}
+.links{
+    margin-left: 2rem;
+}
+.links a {
+    font-size: 17px;
+    color: #fff;
+    margin: 0 10px;
+
+}
+
+.links a i {
+    transition: all .15s cubic-bezier(1, -.115, .975, .855);
+    font-weight: 600;
+}
+
+.links a:hover i {
+    color: #D9643A;
+}
+
+.about a {
+    text-decoration: underline;
+    color: #307DEE;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+        height: 350px;
+        top: 35px;
+        padding: 1rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        margin: .5rem 0;
+        font-size: 20px;
+    }
+
+    h2 .player-choice {
+        float: right;
+        margin-left: 0px;
+    }
+
+    h2 .computer-choice {
+        float: right;
+        margin-left: 0px;
+    }
+
+    h2 .result {
+        float: right;
+        margin-left: 0px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: .6rem 1.6em;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+    .copy{
+        margin-right: .5rem;
+    }
+    .links{
+        margin-left: .5rem;
+    }
+    .links a {
+        font-size: 16px;
+        margin: 0 6px;
+
+    }
+    footer{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .container {
+        padding: .7rem;
+    }
+
+    h2 {
+        margin: .5rem 0;
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: .6rem 1.6em;
+    }
+}
+ -->
